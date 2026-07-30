@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hichem Djellal · Cloud Architect, AI Systems Builder, Founder</title>
+<meta name="description" content="Hichem Djellal designs and builds cloud and AI systems for complex, regulated, and operationally demanding products. Founder of STCI, Altpad Global, and Settral." />
+<meta property="og:title" content="Hichem Djellal · Cloud Architect, AI Systems Builder, Founder" />
+<meta property="og:description" content="Cloud and AI systems for complex, regulated, and operationally demanding products. STCI, Altpad Global, Settral." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0c0f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23d9903a' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #0a0c0f;
+  --ink-2: #0e1116;
+  --ink-3: #131720;
+  --bone: #ece7dc;
+  --bone-dim: #b7b2a6;
+  --muted: #7d7f77;
+  --faint: #4c4f4b;
+  --copper: #d9903a;
+  --copper-bright: #f0b055;
+  --hairline: rgba(236, 231, 220, 0.09);
+  --hairline-strong: rgba(236, 231, 220, 0.18);
+  --serif: "Fraunces", Georgia, serif;
+  --body: "Newsreader", Georgia, serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --pad: clamp(1.25rem, 4vw, 4rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 1.075rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--copper); color: var(--ink); }
+
+a { color: inherit; text-decoration: none; }
+
+/* grain */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* scroll progress */
+.progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 100%;
+  z-index: 70;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: var(--copper);
+}
+
+/* nav */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem var(--pad);
+  border-bottom: 1px solid var(--hairline);
+  background: rgba(10, 12, 15, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.nav-name {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+.nav-name span { color: var(--copper); }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.25s ease;
+  position: relative;
+}
+.nav-links a:hover { color: var(--copper-bright); }
+
+main { position: relative; z-index: 1; }
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+/* hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 7rem;
+  padding-bottom: 3.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--hairline);
+  background:
+    repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px calc(100% / 6));
+  background-size: 100% 100%;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(217, 144, 58, 0.07), transparent 60%);
+  pointer-events: none;
+}
+.hero-kicker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-kicker::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--copper);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.6rem, 7.2vw, 6rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  max-width: 16ch;
+  margin-bottom: 2.4rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--copper-bright);
+}
+.hero-intro {
+  max-width: 56ch;
+  color: var(--bone-dim);
+  font-size: 1.15rem;
+  margin-bottom: 3.5rem;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+  position: relative;
+  z-index: 2;
+}
+.hero-meta div {
+  padding: 1.2rem 1.2rem 0 0;
+  border-right: 1px solid var(--hairline);
+  margin-right: 1.2rem;
+}
+.hero-meta div:last-child { border-right: none; margin-right: 0; }
+.hero-meta .k {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 0.45rem;
+}
+.hero-meta .v {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--bone-dim);
+  line-height: 1.5;
+  display: block;
+}
+.hero-meta a.v:hover { color: var(--copper-bright); }
+
+/* sections */
+section { border-bottom: 1px solid var(--hairline); }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  padding: 4.5rem 0 3rem;
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--copper);
+}
+.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  letter-spacing: -0.01em;
+}
+.section-head .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+  align-self: center;
+}
+.section-note {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* platforms */
+.platform {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding: 3.2rem 0 3.4rem;
+  border-top: 1px solid var(--hairline);
+  position: relative;
+}
+.platform::before {
+  content: "";
+  position: absolute;
+  left: 0; top: -1px;
+  width: 0;
+  height: 1px;
+  background: var(--copper);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.platform:hover::before { width: 100%; }
+.platform-index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--faint);
+  transition: color 0.4s ease;
+  line-height: 1.1;
+  padding-top: 0.3rem;
+}
+.platform:hover .platform-index { color: var(--copper); }
+.platform-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.platform-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+.platform-status {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+  border: 1px solid rgba(217, 144, 58, 0.35);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.platform-tagline {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+.platform-body { max-width: 62ch; color: var(--bone-dim); }
+.platform-body p + p { margin-top: 1rem; }
+.platform-body strong { color: var(--bone); font-weight: 500; }
+.cap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.8rem;
+  list-style: none;
+}
+.cap-list li {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: var(--bone-dim);
+  border: 1px solid var(--hairline-strong);
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.cap-list li:hover {
+  border-color: var(--copper);
+  color: var(--copper-bright);
+  transform: translateY(-2px);
+}
+.platforms-foot { padding: 0 0 4.5rem; }
+
+/* practice (how i build) */
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-bottom: 4.5rem;
+}
+.practice-lede {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.practice-lede em { font-style: italic; color: var(--copper-bright); }
+.practice-copy { color: var(--bone-dim); }
+.practice-copy p + p { margin-top: 1.1rem; }
+.work-list {
+  margin-top: 2rem;
+  border-top: 1px solid var(--hairline);
+  list-style: none;
+}
+.work-list li {
+  display: flex;
+  gap: 1.2rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 0.98rem;
+  color: var(--bone-dim);
+  align-items: baseline;
+}
+.work-list li::before {
+  content: attr(data-i);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--copper);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  width: 1.6rem;
+}
+
+/* values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid var(--hairline);
+  border-top: 1px solid var(--hairline);
+  margin-bottom: 4.5rem;
+}
+.value {
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 2rem 1.8rem 2.4rem;
+  transition: background 0.35s ease;
+  position: relative;
+}
+.value:hover { background: var(--ink-2); }
+.value::after {
+  content: "";
+  position: absolute;
+  left: 1.8rem; bottom: 1.6rem;
+  width: 1.4rem; height: 2px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.value:hover::after { transform: scaleX(1); }
+.value-num {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.value p {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.18rem;
+  line-height: 1.4;
+  color: var(--bone);
+}
+
+/* quote */
+.pull {
+  padding: 5.5rem 0;
+  text-align: left;
+}
+.pull blockquote {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.6vw, 2.8rem);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  max-width: 24ch;
+}
+.pull blockquote span { color: var(--copper-bright); }
+.pull cite {
+  display: block;
+  margin-top: 1.8rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* areas */
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding-bottom: 4.5rem;
+  list-style: none;
+}
+.areas li {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--bone-dim);
+  border: 1px solid var(--hairline-strong);
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.areas li:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* focus / contact */
+.focus { padding-bottom: 5rem; }
+.focus-line {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin-bottom: 2.6rem;
+}
+.focus-line em { font-style: italic; color: var(--copper-bright); }
+.focus-copy { max-width: 58ch; color: var(--bone-dim); margin-bottom: 3rem; }
+.contact-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.6rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  color: var(--bone);
+  transition: all 0.3s ease;
+}
+.contact-btn:hover {
+  border-color: var(--copper);
+  color: var(--copper-bright);
+  transform: translateY(-2px);
+}
+.contact-btn.primary {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: var(--ink);
+}
+.contact-btn.primary:hover {
+  background: var(--copper-bright);
+  color: var(--ink);
+}
+.contact-btn svg { width: 1rem; height: 1rem; fill: currentColor; }
+
+/* footer */
+footer {
+  padding: 2.2rem 0 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+footer a:hover { color: var(--copper-bright); }
+
+/* reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+@media (max-width: 860px) {
+  .hero-meta { grid-template-columns: repeat(2, 1fr); }
+  .hero-meta div { border-right: none; margin-right: 0; padding-bottom: 1rem; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .platform { grid-template-columns: 1fr; gap: 0.8rem; }
+  .platform-index { padding-top: 0; }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a:nth-child(2) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<nav>
+  <a class="nav-name" href="#top">Hichem Djellal <span>/</span> hdrubens</a>
+  <div class="nav-links">
+    <a href="#platforms">Platforms</a>
+    <a href="#practice">Practice</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero wrap">
+    <p class="hero-kicker">Cloud architect · AI systems builder · Founder</p>
+    <h1>I build cloud and AI systems for <em>complex, regulated, demanding</em> products.</h1>
+    <p class="hero-intro">I am an AWS Certified Solutions Architect with substantial hands on experience across Azure and GCP through enterprise customer success work. My strength is connecting architecture, product strategy, delivery discipline, and the reality of how customers actually use software.</p>
+    <div class="hero-meta">
+      <div>
+        <span class="k">Certification</span>
+        <span class="v">AWS Certified<br />Solutions Architect</span>
+      </div>
+      <div>
+        <span class="k">Platforms</span>
+        <span class="v">Azure · GCP<br />Enterprise customer success</span>
+      </div>
+      <div>
+        <span class="k">Base</span>
+        <span class="v">Vancouver, BC<br />Canada</span>
+      </div>
+      <div>
+        <span class="k">Code</span>
+        <a class="v" href="https://github.com/hdrubens" target="_blank" rel="noopener">github.com<br />/hdrubens</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PLATFORMS -->
+  <section id="platforms">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Three platforms, built end to end</h2>
+        <span class="rule"></span>
+        <span class="section-note">Founder</span>
+      </div>
+
+      <div class="platforms-foot">
+
+        <article class="platform reveal">
+          <span class="platform-index">01</span>
+          <div>
+            <div class="platform-top">
+              <h3 class="platform-name">STCI</h3>
+              <span class="platform-status">Production ready</span>
+            </div>
+            <p class="platform-tagline">Immigration continuity platform for technical talent, employers, agencies, and legal teams.</p>
+            <div class="platform-body">
+              <p>STCI helps users organize immigration case files, understand exposure to regulatory changes, identify viable alternatives, and activate the right response when status or international mobility becomes uncertain.</p>
+              <p>The repository is approaching <strong>one million lines</strong> across application code, infrastructure, tests, specifications, and documentation. The scale is not the main point. The engineering discipline behind it is: typed contracts, modular architecture, validator guardrails, controlled database migrations, audit conscious workflows, and extensive documentation, designed for a domain where accuracy, security, traceability, and operational clarity matter.</p>
+              <p>Critical product paths are implemented, tests are in place, the multi tenant employer dashboard is functional, and the trigger classification and activation systems are operational.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Agent orchestration layer</li>
+              <li>Secure document vault</li>
+              <li>RAG powered intelligence</li>
+              <li>H1B continuity intent engines</li>
+              <li>Portfolio scoring</li>
+              <li>Trigger classification</li>
+              <li>Activation workflows</li>
+              <li>Specialized copilots</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="platform reveal">
+          <span class="platform-index">02</span>
+          <div>
+            <div class="platform-top">
+              <h3 class="platform-name">Altpad Global</h3>
+              <span class="platform-status">Four languages</span>
+            </div>
+            <p class="platform-tagline">Multilingual startup visa platform for founders navigating international mobility.</p>
+            <div class="platform-body">
+              <p>Altpad Global helps founders understand and act on international mobility options. It combines four purpose built planning tools, structured case intelligence, an embedded sales copilot, and localized product experiences in four languages.</p>
+              <p>Rather than simply publishing immigration information, the platform turns a founder profile, goals, constraints, and evidence into <strong>a clearer route, a practical plan, and a defined next action</strong>. It brings together immigration intelligence, product automation, sales workflows, and multilingual delivery at a level of depth that is still uncommon in the market.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Four planning tools</li>
+              <li>Structured case intelligence</li>
+              <li>Embedded sales copilot</li>
+              <li>Localized in four languages</li>
+              <li>Founder route planning</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="platform reveal">
+          <span class="platform-index">03</span>
+          <div>
+            <div class="platform-top">
+              <h3 class="platform-name">Settral</h3>
+              <span class="platform-status">Agent infrastructure</span>
+            </div>
+            <p class="platform-tagline">An agent infrastructure layer for consumers.</p>
+            <div class="platform-body">
+              <p>Settral gives specialized agents a common way to represent human intent, discover the right counterpart, negotiate terms, coordinate workflows, and complete real world actions across fragmented services.</p>
+              <p>It is designed for areas such as local services, mobility, commerce, and social coordination, where people currently manage several disconnected applications, conversations, and manual steps. The core idea is simple: <strong>people should be able to express what they need, while agents handle the coordination required to make it happen</strong>.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Intent representation</li>
+              <li>Counterpart discovery</li>
+              <li>Term negotiation</li>
+              <li>Workflow coordination</li>
+              <li>Real world action completion</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <h2 class="section-title">How I build</h2>
+        <span class="rule"></span>
+        <span class="section-note">Staff engineering mindset</span>
+      </div>
+      <div class="practice-grid">
+        <p class="practice-lede reveal">I use AI coding systems as <em>engineering collaborators</em>, not as shortcuts.</p>
+        <div class="practice-copy reveal">
+          <p>When directing agentic swarms through large production systems, I work with a staff engineering mindset. I define architecture, protect system boundaries, sequence migrations, review implementation quality, manage launch risk, and keep the product aligned with what it actually promises users.</p>
+          <p>Recent work:</p>
+          <ul class="work-list">
+            <li data-i="a1">Multi wave pull request execution with Qodo and CodeRabbit quality gates</li>
+            <li data-i="a2">Supabase and Postgres migrations, with data integrity audits</li>
+            <li data-i="a3">RAG architecture and copilot systems</li>
+            <li data-i="a4">Google ADK orchestration</li>
+            <li data-i="a5">STCI launch stabilization and frontend/backend contract repair</li>
+            <li data-i="a6">System design for an agent marketplace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="pull">
+    <div class="wrap">
+      <blockquote class="reveal">The interface, the documentation, the data model, and the actual system behavior <span>should always agree.</span></blockquote>
+      <cite class="reveal">Product truth · the standard I hold every launch to</cite>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section id="values">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">03</span>
+        <h2 class="section-title">What I care about</h2>
+        <span class="rule"></span>
+        <span class="section-note">Principles</span>
+      </div>
+      <div class="values-grid reveal">
+        <div class="value"><span class="value-num">/ 01</span><p>Clear architecture.</p></div>
+        <div class="value"><span class="value-num">/ 02</span><p>Reliable launches.</p></div>
+        <div class="value"><span class="value-num">/ 03</span><p>Strong contracts between systems.</p></div>
+        <div class="value"><span class="value-num">/ 04</span><p>Accurate and honest product surfaces.</p></div>
+        <div class="value"><span class="value-num">/ 05</span><p>Documentation that makes complex systems understandable.</p></div>
+        <div class="value"><span class="value-num">/ 06</span><p>AI that performs useful work instead of simply adding another chat interface.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE AREAS -->
+  <section id="areas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Core areas</h2>
+        <span class="rule"></span>
+        <span class="section-note">Capabilities</span>
+      </div>
+      <ul class="areas reveal">
+        <li>Cloud architecture</li>
+        <li>Agentic systems</li>
+        <li>RAG</li>
+        <li>AI copilots</li>
+        <li>Workflow automation</li>
+        <li>Regulated product design</li>
+        <li>Multi tenant SaaS</li>
+        <li>Supabase</li>
+        <li>Postgres</li>
+        <li>Product architecture</li>
+        <li>Launch readiness</li>
+        <li>AI assisted software delivery</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CURRENT FOCUS / CONTACT -->
+  <section id="contact" class="focus">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Current focus</h2>
+        <span class="rule"></span>
+        <span class="section-note">Now</span>
+      </div>
+      <p class="focus-line reveal">AI native systems that <em>understand intent, reason across workflows, and turn decisions into real actions.</em></p>
+      <p class="focus-copy reveal">I am currently focused on building systems that can coordinate specialized agents and carry work through to completion, not just conversation. The best way to see how I work is the work itself.</p>
+      <div class="contact-row reveal">
+        <a class="contact-btn primary" href="https://github.com/hdrubens" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub
+        </a>
+        <a class="contact-btn" href="https://github.com/hdrubens?tab=repositories" target="_blank" rel="noopener">Repositories</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <span>© 2026 Hichem Djellal · Vancouver, BC</span>
+    <a href="https://github.com/hdrubens" target="_blank" rel="noopener">github.com/hdrubens</a>
+    <span>Single static page · No trackers</span>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  // scroll progress
+  var bar = document.querySelector('.progress');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? h.scrollTop / max : 0;
+    bar.style.transform = 'scaleX(' + p + ')';
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el, i) {
+      el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
+      io.observe(el);
+    });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+
+</body>
+</html>
