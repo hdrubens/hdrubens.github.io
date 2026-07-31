@@ -296,6 +296,14 @@ section { border-bottom: 1px solid var(--hairline); }
   border-radius: 999px;
   white-space: nowrap;
 }
+a.platform-status {
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+a.platform-status:hover {
+  border-color: var(--copper);
+  color: var(--copper-bright);
+  transform: translateY(-2px);
+}
 .platform-tagline {
   font-family: var(--mono);
   font-size: 0.74rem;
@@ -613,11 +621,11 @@ footer a:hover { color: var(--copper-bright); }
           <div>
             <div class="platform-top">
               <h3 class="platform-name">STCI</h3>
-              <span class="platform-status">Production ready</span>
+              <a class="platform-status" href="https://www.buildtovisa.com/STCI/" target="_blank" rel="noopener">Live · buildtovisa.com/STCI</a>
             </div>
-            <p class="platform-tagline">Immigration continuity platform for technical talent, employers, agencies, and legal teams.</p>
+            <p class="platform-tagline">Continuity insurance for visa dependent critical talent, and the companies that cannot afford to lose them.</p>
             <div class="platform-body">
-              <p>STCI helps users organize immigration case files, understand exposure to regulatory changes, identify viable alternatives, and activate the right response when status or international mobility becomes uncertain.</p>
+              <p>STCI maintains a continuity plan for every protected employee: documents current in a secure vault, alternate routes mapped across 8+ jurisdictions, and evidence gaps for O-1 and EB-1A routes closed in advance. When a status event fires, an RFE, a denial, a layoff, a lapse, a structured Day 0 to 30 response runs from preparation, not panic.</p>
               <p>The repository is approaching <strong>one million lines</strong> across application code, infrastructure, tests, specifications, and documentation. The scale is not the main point. The engineering discipline behind it is: typed contracts, modular architecture, validator guardrails, controlled database migrations, audit conscious workflows, and extensive documentation, designed for a domain where accuracy, security, traceability, and operational clarity matter.</p>
               <p>Critical product paths are implemented, tests are in place, the multi tenant employer dashboard is functional, and the trigger classification and activation systems are operational.</p>
             </div>
@@ -639,11 +647,11 @@ footer a:hover { color: var(--copper-bright); }
           <div>
             <div class="platform-top">
               <h3 class="platform-name">Altpad Global</h3>
-              <span class="platform-status">Four languages</span>
+              <a class="platform-status" href="https://www.buildtovisa.com/en" target="_blank" rel="noopener">Live · buildtovisa.com</a>
             </div>
-            <p class="platform-tagline">Multilingual startup visa platform for founders navigating international mobility.</p>
+            <p class="platform-tagline">Multilingual startup visa platform for founders, live as the Build to Visa program.</p>
             <div class="platform-body">
-              <p>Altpad Global helps founders understand and act on international mobility options. It combines four purpose built planning tools, structured case intelligence, an embedded sales copilot, and localized product experiences in four languages.</p>
+              <p>Altpad Global turns professional experience into a credible startup visa application: 8 countries, 4 languages, and more than 200 professionals relocated. It combines purpose built planning tools, structured case intelligence, an embedded sales copilot, and localized product experiences.</p>
               <p>Rather than simply publishing immigration information, the platform turns a founder profile, goals, constraints, and evidence into <strong>a clearer route, a practical plan, and a defined next action</strong>. It brings together immigration intelligence, product automation, sales workflows, and multilingual delivery at a level of depth that is still uncommon in the market.</p>
             </div>
             <ul class="cap-list">
@@ -779,6 +787,10 @@ footer a:hover { color: var(--copper-bright); }
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
           GitHub
         </a>
+        <a class="contact-btn" href="https://www.linkedin.com/in/h-w-djellal-0a8a36285/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          LinkedIn
+        </a>
         <a class="contact-btn" href="https://github.com/hdrubens?tab=repositories" target="_blank" rel="noopener">Repositories</a>
       </div>
     </div>
@@ -787,6 +799,7 @@ footer a:hover { color: var(--copper-bright); }
   <footer class="wrap">
     <span>© 2026 Hichem Djellal · Vancouver, BC</span>
     <a href="https://github.com/hdrubens" target="_blank" rel="noopener">github.com/hdrubens</a>
+    <a href="https://www.linkedin.com/in/h-w-djellal-0a8a36285/" target="_blank" rel="noopener">LinkedIn</a>
     <span>Single static page · No trackers</span>
   </footer>
 
