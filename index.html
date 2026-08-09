@@ -686,6 +686,31 @@ footer a:hover { color: var(--copper-bright); }
           </div>
         </article>
 
+        <article class="platform reveal">
+          <span class="platform-index">04</span>
+          <div>
+            <div class="platform-top">
+              <h3 class="platform-name">Retail Crew Dashboard</h3>
+              <span class="platform-status">Working MVP</span>
+            </div>
+            <p class="platform-tagline">AI crew orchestrator that automates task assignment for retail store teams.</p>
+            <div class="platform-body">
+              <p>Store associates create customer facing requests: a size lookup, fitting room support, a price check, a restock, an escalation. The system detects the request type, reads the store situation level, and broadcasts the task to LLM backed crew agents, one per crew member, which reply accept, decline, or counter with an ETA. A deterministic scoring layer selects the winner, and an orchestrator agent writes the action plan.</p>
+              <p>High severity requests route to a <strong>manager approval queue</strong>, so no plan commits without a human where it matters. A coach agent turns per crew performance analytics into written coaching reports. Built with Next.js, React, TypeScript, Supabase Postgres, and Gemini, with atomic rate limits, an append only audit log, transactional migrations, and unit tests covering the deterministic core.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Multi agent broadcast</li>
+              <li>Deterministic winner selection</li>
+              <li>Manager approval queue</li>
+              <li>Coach agent reports</li>
+              <li>Gemini 2.0 Flash</li>
+              <li>Supabase Postgres</li>
+              <li>Append only audit log</li>
+              <li>Rate limit guardrails</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
