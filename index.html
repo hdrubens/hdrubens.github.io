@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hichem Djellal · Cloud Architect, AI Systems Builder, Founder</title>
-<meta name="description" content="Hichem Djellal designs and builds cloud and AI systems for complex, regulated, and operationally demanding products. Founder of STCI, Altpad Global, and Settral." />
-<meta property="og:title" content="Hichem Djellal · Cloud Architect, AI Systems Builder, Founder" />
-<meta property="og:description" content="Cloud and AI systems for complex, regulated, and operationally demanding products. STCI, Altpad Global, Settral." />
+<title>Hichem Djellal · Founder, AI Systems Builder, Revenue Strategist</title>
+<meta name="description" content="Hichem Djellal builds companies and the AI systems that grow them. Cofounder of ARTEI PHIRE, leading strategy and revenue, and founder of Altpad Global, STCI, and Settral." />
+<meta property="og:title" content="Hichem Djellal · Founder, AI Systems Builder, Revenue Strategist" />
+<meta property="og:description" content="Founder building companies and the AI systems that grow them. ARTEI PHIRE, Altpad Global, STCI, Settral." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0c0f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23d9903a' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -204,7 +204,6 @@ main { position: relative; z-index: 1; }
   line-height: 1.5;
   display: block;
 }
-.hero-meta a.v:hover { color: var(--copper-bright); }
 
 /* sections */
 section { border-bottom: 1px solid var(--hairline); }
@@ -240,7 +239,7 @@ section { border-bottom: 1px solid var(--hairline); }
   color: var(--faint);
 }
 
-/* platforms */
+/* ventures */
 .platform {
   display: grid;
   grid-template-columns: 5.5rem 1fr;
@@ -270,6 +269,16 @@ section { border-bottom: 1px solid var(--hairline); }
   padding-top: 0.3rem;
 }
 .platform:hover .platform-index { color: var(--copper); }
+/* 0.16em tracking (as .section-note) keeps the longest role,
+   "Cofounder · Strategy and Revenue Officer", on one line from 360px up. */
+.platform-role {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 0.8rem;
+}
 .platform-top {
   display: flex;
   align-items: baseline;
@@ -285,6 +294,9 @@ section { border-bottom: 1px solid var(--hairline); }
   letter-spacing: -0.015em;
   line-height: 1.05;
 }
+/* One fixed box for every status chip, sized by the longest label
+   ("Live · buildtovisa.com/STCI", about 15.2rem), so chips line up as a
+   column instead of each one shrinking to its own text. */
 .platform-status {
   font-family: var(--mono);
   font-size: 0.64rem;
@@ -294,6 +306,8 @@ section { border-bottom: 1px solid var(--hairline); }
   border: 1px solid rgba(217, 144, 58, 0.35);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
+  width: 16rem;
+  text-align: center;
   white-space: nowrap;
 }
 a.platform-status {
@@ -491,10 +505,14 @@ a.platform-status:hover {
   gap: 1rem;
   flex-wrap: wrap;
 }
+/* min-width equalizes the three buttons: the widest ("Repositories")
+   renders at about 9.9rem, so every button gets the same 10.5rem box. */
 .contact-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.7rem;
+  min-width: 10.5rem;
   font-family: var(--mono);
   font-size: 0.74rem;
   letter-spacing: 0.14em;
@@ -553,7 +571,9 @@ footer a:hover { color: var(--copper-bright); }
 
 @media (max-width: 860px) {
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
-  .hero-meta div { border-right: none; margin-right: 0; padding-bottom: 1rem; }
+  /* 0.75rem gutter keeps every two line meta value (longest: "Solutions
+     Architect") unwrapped down to 360px wide phones. */
+  .hero-meta div { border-right: none; margin-right: 0; padding-right: 0.75rem; padding-bottom: 1rem; }
   .practice-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
   .platform { grid-template-columns: 1fr; gap: 0.8rem; }
@@ -571,7 +591,7 @@ footer a:hover { color: var(--copper-bright); }
 <nav>
   <a class="nav-name" href="#top">Hichem Djellal <span>/</span> hdrubens</a>
   <div class="nav-links">
-    <a href="#platforms">Platforms</a>
+    <a href="#ventures">Ventures</a>
     <a href="#practice">Practice</a>
     <a href="#contact">Contact</a>
   </div>
@@ -581,37 +601,40 @@ footer a:hover { color: var(--copper-bright); }
 
   <!-- HERO -->
   <header class="hero wrap">
-    <p class="hero-kicker">Cloud architect · AI systems builder · Founder</p>
-    <h1>I build cloud and AI systems for <em>complex, regulated, demanding</em> products.</h1>
-    <p class="hero-intro">I am an AWS Certified Solutions Architect with substantial hands on experience across Azure and GCP through enterprise customer success work. My strength is connecting architecture, product strategy, delivery discipline, and the reality of how customers actually use software.</p>
+    <p class="hero-kicker">Founder&nbsp;· AI systems builder&nbsp;· Revenue strategist</p>
+    <h1>I build companies and <em>the AI systems that grow them.</em></h1>
+    <p class="hero-intro">I am a Vancouver based founder working where business strategy meets applied AI. At ARTEI PHIRE, the artisan perfume house I cofounded, I lead strategy and revenue. Across Altpad Global, STCI, and Settral, which I founded, I design the agentic AI at the core of each product.</p>
     <div class="hero-meta">
       <div>
-        <span class="k">Certification</span>
+        <span class="k">Cofounder</span>
+        <span class="v">ARTEI PHIRE<br />Strategy · revenue</span>
+      </div>
+      <div>
+        <span class="k">Founder</span>
+        <span class="v">Altpad Global<br />STCI · Settral</span>
+      </div>
+      <div>
+        <span class="k">AI systems</span>
+        <span class="v">Agents · copilots<br />RAG · workflows</span>
+      </div>
+      <div>
+        <span class="k">Credential</span>
         <span class="v">AWS Certified<br />Solutions Architect</span>
-      </div>
-      <div>
-        <span class="k">Platforms</span>
-        <span class="v">Azure · GCP<br />Enterprise customer success</span>
-      </div>
-      <div>
-        <span class="k">Base</span>
-        <span class="v">Vancouver, BC<br />Canada</span>
-      </div>
-      <div>
-        <span class="k">Code</span>
-        <a class="v" href="https://github.com/hdrubens" target="_blank" rel="noopener">github.com<br />/hdrubens</a>
       </div>
     </div>
   </header>
 
-  <!-- PLATFORMS -->
-  <section id="platforms">
+  <!-- VENTURES -->
+  <section id="ventures">
+    <!-- #platforms was this section's id before the rename; this empty,
+         zero height anchor keeps old bookmarks and links landing here. -->
+    <span id="platforms"></span>
     <div class="wrap">
       <div class="section-head reveal">
         <span class="section-num">01</span>
-        <h2 class="section-title">Latest projects</h2>
+        <h2 class="section-title">Ventures</h2>
         <span class="rule"></span>
-        <span class="section-note">Founder</span>
+        <span class="section-note">Founder and operator</span>
       </div>
 
       <div class="platforms-foot">
@@ -619,6 +642,55 @@ footer a:hover { color: var(--copper-bright); }
         <article class="platform reveal">
           <span class="platform-index">01</span>
           <div>
+            <p class="platform-role">Cofounder · Strategy and Revenue Officer</p>
+            <div class="platform-top">
+              <h3 class="platform-name">ARTEI PHIRE</h3>
+              <a class="platform-status" href="https://www.artei-phire.store/" target="_blank" rel="noopener">Live · artei-phire.store</a>
+            </div>
+            <p class="platform-tagline">Artisan botanical perfumes, handmade in Vancouver and shipped to more than 30 countries.</p>
+            <div class="platform-body">
+              <p>I cofounded ARTEI PHIRE in December 2023 and serve as its strategy and revenue officer. The perfumes are the craft; my work is the business around them: positioning the house, pricing the range, and building the channels that carry it, from the online store and retail partners to wholesale, workshops, pop ups, and a wedding perfume bar.</p>
+              <p>Today I am growing that revenue engine with <strong>AI workflows and ad tech</strong>, so an independent perfume house can find, reach, and convert customers with the precision of a global brand.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Revenue strategy</li>
+              <li>Positioning and pricing</li>
+              <li>Direct to consumer</li>
+              <li>Wholesale and retail partners</li>
+              <li>Workshops and events</li>
+              <li>AI growth workflows</li>
+              <li>Ad tech and paid media</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="platform reveal">
+          <span class="platform-index">02</span>
+          <div>
+            <p class="platform-role">Founder</p>
+            <div class="platform-top">
+              <h3 class="platform-name">Altpad Global</h3>
+              <a class="platform-status" href="https://www.buildtovisa.com/en" target="_blank" rel="noopener">Live · buildtovisa.com</a>
+            </div>
+            <p class="platform-tagline">Multilingual startup visa platform for founders, live as the Build to Visa program.</p>
+            <div class="platform-body">
+              <p>Altpad Global turns professional experience into a credible startup visa application: 8 countries, 4 languages, and more than 200 professionals relocated. It combines purpose built planning tools, structured case intelligence, an embedded sales copilot, and localized product experiences.</p>
+              <p>Rather than simply publishing immigration information, the platform turns a founder profile, goals, constraints, and evidence into <strong>a clearer route, a practical plan, and a defined next action</strong>. It brings together immigration intelligence, product automation, sales workflows, and multilingual delivery at a level of depth that is still uncommon in the market.</p>
+            </div>
+            <ul class="cap-list">
+              <li>Four planning tools</li>
+              <li>Structured case intelligence</li>
+              <li>Embedded sales copilot</li>
+              <li>Localized in four languages</li>
+              <li>Founder route planning</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="platform reveal">
+          <span class="platform-index">03</span>
+          <div>
+            <p class="platform-role">Founder</p>
             <div class="platform-top">
               <h3 class="platform-name">STCI</h3>
               <a class="platform-status" href="https://www.buildtovisa.com/STCI/" target="_blank" rel="noopener">Live · buildtovisa.com/STCI</a>
@@ -643,30 +715,9 @@ footer a:hover { color: var(--copper-bright); }
         </article>
 
         <article class="platform reveal">
-          <span class="platform-index">02</span>
+          <span class="platform-index">04</span>
           <div>
-            <div class="platform-top">
-              <h3 class="platform-name">Altpad Global</h3>
-              <a class="platform-status" href="https://www.buildtovisa.com/en" target="_blank" rel="noopener">Live · buildtovisa.com</a>
-            </div>
-            <p class="platform-tagline">Multilingual startup visa platform for founders, live as the Build to Visa program.</p>
-            <div class="platform-body">
-              <p>Altpad Global turns professional experience into a credible startup visa application: 8 countries, 4 languages, and more than 200 professionals relocated. It combines purpose built planning tools, structured case intelligence, an embedded sales copilot, and localized product experiences.</p>
-              <p>Rather than simply publishing immigration information, the platform turns a founder profile, goals, constraints, and evidence into <strong>a clearer route, a practical plan, and a defined next action</strong>. It brings together immigration intelligence, product automation, sales workflows, and multilingual delivery at a level of depth that is still uncommon in the market.</p>
-            </div>
-            <ul class="cap-list">
-              <li>Four planning tools</li>
-              <li>Structured case intelligence</li>
-              <li>Embedded sales copilot</li>
-              <li>Localized in four languages</li>
-              <li>Founder route planning</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="platform reveal">
-          <span class="platform-index">03</span>
-          <div>
+            <p class="platform-role">Founder and CEO</p>
             <div class="platform-top">
               <h3 class="platform-name">Settral</h3>
               <span class="platform-status">Agent infrastructure</span>
@@ -687,8 +738,9 @@ footer a:hover { color: var(--copper-bright); }
         </article>
 
         <article class="platform reveal">
-          <span class="platform-index">04</span>
+          <span class="platform-index">05</span>
           <div>
+            <p class="platform-role">Builder</p>
             <div class="platform-top">
               <h3 class="platform-name">Retail Crew Dashboard</h3>
               <span class="platform-status">Working MVP</span>
@@ -722,20 +774,23 @@ footer a:hover { color: var(--copper-bright); }
         <span class="section-num">02</span>
         <h2 class="section-title">How I build</h2>
         <span class="rule"></span>
-        <span class="section-note">Staff engineering mindset</span>
+        <span class="section-note">Product and revenue</span>
       </div>
       <div class="practice-grid">
-        <p class="practice-lede reveal">I use AI coding systems as <em>engineering collaborators</em>, not as shortcuts.</p>
+        <p class="practice-lede reveal">I put AI to work on both sides of a company: <em>the product and the revenue engine.</em></p>
         <div class="practice-copy reveal">
-          <p>When directing agentic swarms through large production systems, I work with a staff engineering mindset. I define architecture, protect system boundaries, sequence migrations, review implementation quality, manage launch risk, and keep the product aligned with what it actually promises users.</p>
+          <p>On the product side, I direct agentic swarms through large production systems with a staff engineering mindset. I define architecture, protect system boundaries, sequence migrations, review implementation quality, manage launch risk, and keep the product aligned with what it actually promises users.</p>
+          <p>On the revenue side, I bring the same discipline to growth: a clear strategy, channels chosen for their economics, and AI workflows and ad tech that turn attention into orders.</p>
           <p>Recent work:</p>
           <ul class="work-list">
-            <li data-i="a1">Multi wave pull request execution with Qodo and CodeRabbit quality gates</li>
-            <li data-i="a2">Supabase and Postgres migrations, with data integrity audits</li>
-            <li data-i="a3">RAG architecture and copilot systems</li>
-            <li data-i="a4">Google ADK orchestration</li>
-            <li data-i="a5">STCI launch stabilization and frontend/backend contract repair</li>
-            <li data-i="a6">System design for an agent marketplace</li>
+            <li data-i="a1">AI workflows and ad tech driving the ARTEI PHIRE revenue engine</li>
+            <li data-i="a2">Positioning, pricing, and channel strategy for ARTEI PHIRE</li>
+            <li data-i="a3">Multi wave pull request execution with Qodo and CodeRabbit quality gates</li>
+            <li data-i="a4">Supabase and Postgres migrations, with data integrity audits</li>
+            <li data-i="a5">RAG architecture and copilot systems</li>
+            <li data-i="a6">Google ADK orchestration</li>
+            <li data-i="a7">STCI launch stabilization and frontend/backend contract repair</li>
+            <li data-i="a8">System design for an agent marketplace</li>
           </ul>
         </div>
       </div>
@@ -745,8 +800,8 @@ footer a:hover { color: var(--copper-bright); }
   <!-- QUOTE -->
   <section class="pull">
     <div class="wrap">
-      <blockquote class="reveal">The interface, the documentation, the data model, and the actual system behavior <span>should always agree.</span></blockquote>
-      <cite class="reveal">Product truth · the standard I hold every launch to</cite>
+      <blockquote class="reveal">What the ad promises, what the product delivers, and what the data shows <span>should always agree.</span></blockquote>
+      <cite class="reveal">Product truth · the standard I hold every venture to</cite>
     </div>
   </section>
 
@@ -760,11 +815,11 @@ footer a:hover { color: var(--copper-bright); }
         <span class="section-note">Principles</span>
       </div>
       <div class="values-grid reveal">
-        <div class="value"><span class="value-num">/ 01</span><p>Clear architecture.</p></div>
-        <div class="value"><span class="value-num">/ 02</span><p>Reliable launches.</p></div>
-        <div class="value"><span class="value-num">/ 03</span><p>Strong contracts between systems.</p></div>
-        <div class="value"><span class="value-num">/ 04</span><p>Accurate and honest product surfaces.</p></div>
-        <div class="value"><span class="value-num">/ 05</span><p>Documentation that makes complex systems understandable.</p></div>
+        <div class="value"><span class="value-num">/ 01</span><p>Unit economics proven before spend scales.</p></div>
+        <div class="value"><span class="value-num">/ 02</span><p>Distribution designed from day one, not bolted on after launch.</p></div>
+        <div class="value"><span class="value-num">/ 03</span><p>Revenue that compounds, not campaigns that spike.</p></div>
+        <div class="value"><span class="value-num">/ 04</span><p>Clear architecture and strong contracts between systems.</p></div>
+        <div class="value"><span class="value-num">/ 05</span><p>Accurate and honest product surfaces.</p></div>
         <div class="value"><span class="value-num">/ 06</span><p>AI that performs useful work instead of simply adding another chat interface.</p></div>
       </div>
     </div>
@@ -780,18 +835,21 @@ footer a:hover { color: var(--copper-bright); }
         <span class="section-note">Capabilities</span>
       </div>
       <ul class="areas reveal">
-        <li>Cloud architecture</li>
+        <li>Venture building</li>
+        <li>Revenue strategy</li>
+        <li>Go to market</li>
+        <li>Positioning and pricing</li>
+        <li>Ad tech and paid media</li>
+        <li>AI growth workflows</li>
         <li>Agentic systems</li>
         <li>RAG</li>
         <li>AI copilots</li>
         <li>Workflow automation</li>
+        <li>AI assisted software delivery</li>
         <li>Regulated product design</li>
         <li>Multi tenant SaaS</li>
-        <li>Supabase</li>
-        <li>Postgres</li>
-        <li>Product architecture</li>
-        <li>Launch readiness</li>
-        <li>AI assisted software delivery</li>
+        <li>Cloud architecture</li>
+        <li>Supabase and Postgres</li>
       </ul>
     </div>
   </section>
@@ -805,16 +863,16 @@ footer a:hover { color: var(--copper-bright); }
         <span class="rule"></span>
         <span class="section-note">Now</span>
       </div>
-      <p class="focus-line reveal">AI native systems that <em>understand intent, reason across workflows, and turn decisions into real actions.</em></p>
-      <p class="focus-copy reveal">I am currently focused on building systems that can coordinate specialized agents and carry work through to completion, not just conversation. The best way to see how I work is the work itself.</p>
+      <p class="focus-line reveal">AI native companies that <em>turn intent into action, and attention into revenue.</em></p>
+      <p class="focus-copy reveal">Right now that means two things: growing the ARTEI PHIRE revenue engine with AI workflows and ad tech, and building agent systems at Altpad Global and Settral that carry work through to completion, not just conversation. If you are building at that intersection, I would like to hear from you.</p>
       <div class="contact-row reveal">
-        <a class="contact-btn primary" href="https://github.com/hdrubens" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-          GitHub
-        </a>
-        <a class="contact-btn" href="https://www.linkedin.com/in/h-w-djellal-0a8a36285/" target="_blank" rel="noopener">
+        <a class="contact-btn primary" href="https://www.linkedin.com/in/h-w-djellal-0a8a36285/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
           LinkedIn
+        </a>
+        <a class="contact-btn" href="https://github.com/hdrubens" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub
         </a>
         <a class="contact-btn" href="https://github.com/hdrubens?tab=repositories" target="_blank" rel="noopener">Repositories</a>
       </div>
